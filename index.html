@@ -572,6 +572,29 @@
     .number:last-child { border-bottom: 0; }
   }
 
+  /* ---------- SECTION HERO IMAGES ---------- */
+  .section-img-wrap {
+    margin: 32px 0 48px; border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--gold-line);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    position: relative;
+  }
+  .section-img-wrap::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.45) 100%);
+    pointer-events: none;
+  }
+  .section-img-wrap img {
+    display: block; width: 100%; height: auto; object-fit: cover;
+    filter: saturate(1.05) contrast(1.05);
+  }
+  .stack-visual {
+    margin-top: 32px; border-radius: 6px; overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+  }
+  .stack-visual img { display: block; width: 100%; height: auto; }
+
   /* ---------- ONBOARDING TIMELINE ---------- */
   .timeline { position: relative; padding-left: 48px; }
   .timeline::before {
@@ -588,6 +611,12 @@
   .step .num {
     font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
     text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .step .step-icon {
+    width: 44px; height: 44px; border-radius: 6px;
+    object-fit: cover; margin-bottom: 12px;
+    border: 1px solid var(--gold-line);
+    background: var(--bg-card);
   }
   .step h4 {
     font-family: var(--serif); font-weight: 600; font-size: 24px; line-height: 1.2;
@@ -766,6 +795,12 @@
     <p class="section-lead fade-up delay-2">
       O empresario da microrregiao nao precisa de campanha generica de big agency. Precisa de presenca digital constante, com rosto conhecido, no canal onde o publico local ja esta.
     </p>
+
+    <div class="section-img-wrap fade-up delay-2">
+      <img src="assets/img-agencia-mood.jpg"
+           alt="Agencia boutique de marketing digital com IA"
+           loading="lazy" />
+    </div>
 
     <div class="split-grid fade-up delay-3">
       <div class="split-col before">
@@ -963,6 +998,11 @@
           <span class="stat-num">~70%</span>
           <div class="stat-lbl">de reducao de custo operacional graças a stack proprietaria de IA</div>
         </div>
+        <div class="stack-visual">
+          <img src="assets/img-stack-tech.jpg"
+               alt="Stack de tecnologia IA conectada"
+               loading="lazy" />
+        </div>
       </div>
     </div>
   </div>
@@ -1051,11 +1091,13 @@
     <div class="timeline fade-up delay-3">
       <div class="step">
         <div class="num">Dia 01</div>
+        <img src="assets/icon-onboarding-briefing.jpg" alt="Icone briefing" loading="lazy" class="step-icon" />
         <h4>Boas-vindas e acesso</h4>
         <p>Confirmacao de contrato, acesso ao Instagram via Parceiro e formulario de briefing (cores, logo, fotos do negocio, publico).</p>
       </div>
       <div class="step">
         <div class="num">Dias 02 a 05</div>
+        <img src="assets/icon-onboarding-calendario.jpg" alt="Icone calendario editorial" loading="lazy" class="step-icon" />
         <h4>Diagnostico e planejamento</h4>
         <p>Analise completa do perfil atual, identificacao dos pontos criticos e definicao do posicionamento. Entrega do calendario editorial do primeiro mes.</p>
       </div>
@@ -1066,11 +1108,13 @@
       </div>
       <div class="step">
         <div class="num">Semana 02</div>
+        <img src="assets/icon-onboarding-producao.jpg" alt="Icone producao de conteudo" loading="lazy" class="step-icon" />
         <h4>Primeira producao</h4>
         <p>Criacao das primeiras artes e videos. Envio para aprovacao via WhatsApp em 48h. Primeiras publicacoes ja no ar.</p>
       </div>
       <div class="step">
         <div class="num">Mes 02 em diante</div>
+        <img src="assets/icon-onboarding-resultados.jpg" alt="Icone resultados e relatorios" loading="lazy" class="step-icon" />
         <h4>Ritmo estabelecido</h4>
         <p>Calendario do mes seguinte enviado ate dia 25. Relatorio mensal de alcance, seguidores e engajamento. Conversa de alinhamento estrategico.</p>
       </div>
