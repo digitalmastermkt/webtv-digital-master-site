@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WebTV e Digital Master — Agencia de Marketing Digital com IA</title>
-<meta name="description" content="Stack de IA + presenca regional real no maior portal do interior do Piaui. Pacotes a partir de R$800/mes. Salatiel Batista + Fabricio.">
+<meta name="description" content="Parceria estrategica entre WebTV Piaui e Digital Master. Stack de IA + presenca regional real no maior portal do interior do Piaui. Pacotes a partir de R$800/mes.">
 <meta name="theme-color" content="#060606">
 <meta property="og:title" content="WebTV e Digital Master | IA + Audiencia Regional">
 <meta property="og:description" content="Marketing digital com IA e exposicao no portal mais seguido do interior. Pacotes R$800 a R$1.500/mes.">
@@ -140,31 +140,34 @@
   }
   .hero-grid {
     position: relative; z-index: 2;
-    width: 100%; max-width: 1400px; margin: 0 auto;
-    display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 80px; align-items: center;
+    width: 100%; max-width: 1100px; margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 0;
   }
+  .hero-grid > div { width: 100%; }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 12px;
     font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--gold); margin-bottom: 32px;
+    justify-content: center;
   }
-  .hero-eyebrow::before {
+  .hero-eyebrow::before, .hero-eyebrow::after {
     content: ''; width: 36px; height: 1px; background: var(--gold);
   }
   .hero h1 {
     font-family: var(--serif); font-weight: 800;
-    font-size: clamp(48px, 7vw, 92px); line-height: 0.98;
-    letter-spacing: -0.02em; margin-bottom: 32px;
+    font-size: clamp(42px, 6vw, 76px); line-height: 1.02;
+    letter-spacing: -0.02em; margin-bottom: 28px;
   }
   .hero h1 .italic { font-style: italic; color: var(--gold); font-weight: 700; }
   .hero h1 .thin { font-weight: 400; }
   .hero-sub {
-    font-size: 19px; color: var(--text-muted); max-width: 540px; line-height: 1.55;
-    margin-bottom: 44px; font-weight: 300;
+    font-size: 19px; color: var(--text-muted); max-width: 600px; line-height: 1.55;
+    margin: 0 auto 44px; font-weight: 300;
   }
   .hero-sub strong { color: var(--text); font-weight: 500; }
 
-  .hero-ctas { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .hero-ctas { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: center; }
 
   .btn-primary {
     position: relative; display: inline-flex; align-items: center; gap: 14px;
@@ -192,32 +195,52 @@
   }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 
-  .hero-photo {
-    position: relative; aspect-ratio: 3/4;
-    border-radius: 4px; overflow: hidden;
-    background: var(--bg-card);
-    box-shadow:
-      0 60px 120px -30px rgba(0,0,0,0.6),
-      0 0 0 1px var(--line);
+  .hero-logos {
+    display: flex; align-items: center; justify-content: center;
+    gap: clamp(28px, 5vw, 72px);
+    margin-bottom: 56px;
+    flex-wrap: wrap;
   }
-  .hero-photo img {
-    width: 100%; height: 100%; object-fit: cover; object-position: center top;
-    filter: contrast(1.05) saturate(0.95);
+  .hero-logo {
+    position: relative;
+    width: clamp(180px, 22vw, 280px);
+    height: clamp(120px, 15vw, 180px);
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid var(--line-mid);
+    border-radius: 12px;
+    padding: 22px 28px;
+    transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.6);
   }
-  .hero-photo::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(6,6,6,0.5) 100%);
-    pointer-events: none;
+  .hero-logo:hover {
+    border-color: var(--gold-line);
+    transform: translateY(-3px);
+    box-shadow: 0 40px 80px -25px rgba(201,169,110,0.18);
   }
-  .hero-photo-tag {
-    position: absolute; left: -1px; bottom: 24px;
-    background: var(--bg); border: 1px solid var(--gold-line);
-    padding: 12px 20px; border-radius: 0 4px 4px 0;
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--gold);
-    z-index: 3;
+  .hero-logo img {
+    max-width: 100%; max-height: 100%;
+    width: auto; height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
   }
-  .hero-photo-tag .name { color: var(--text); font-weight: 700; display: block; font-size: 13px; }
+  .hero-logo.webtv {
+    background: linear-gradient(180deg, #ffffff, #f4f4f4);
+    border-color: rgba(255,255,255,0.18);
+  }
+  .hero-logos-x {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(36px, 4vw, 54px);
+    color: var(--gold); font-weight: 400;
+    line-height: 1; user-select: none;
+    text-shadow: 0 0 24px rgba(201,169,110,0.4);
+    flex-shrink: 0;
+  }
+  @media (max-width: 600px) {
+    .hero-logos { gap: 18px; }
+    .hero-logo { width: 140px; height: 90px; padding: 14px 18px; }
+    .hero-logos-x { font-size: 28px; }
+  }
 
   .scroll-indicator {
     position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
@@ -236,8 +259,6 @@
 
   @media (max-width: 980px) {
     .hero { padding: 120px 22px 60px; min-height: auto; }
-    .hero-grid { grid-template-columns: 1fr; gap: 50px; }
-    .hero-photo { max-width: 380px; margin: 0 auto; }
     .scroll-indicator { display: none; }
   }
 
@@ -466,56 +487,56 @@
     .stack-tools { grid-template-columns: repeat(2, 1fr); }
   }
 
-  /* ---------- SOCIOS ---------- */
-  .socios { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .socios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .socio {
-    background: var(--bg-card); border: 1px solid var(--line); border-radius: 6px;
+  /* ---------- PARCERIA ---------- */
+  .parceria { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .parceria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .marca-card {
+    background: var(--bg-card); border: 1px solid var(--line); border-radius: 8px;
     padding: 0; overflow: hidden; transition: all 0.4s ease;
+    display: flex; flex-direction: column;
   }
-  .socio:hover { border-color: var(--gold-line); transform: translateY(-4px); }
-  .socio-photo {
-    aspect-ratio: 4/3; background: var(--bg-elev);
+  .marca-card:hover { border-color: var(--gold-line); transform: translateY(-4px); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6); }
+  .marca-logo-wrap {
+    aspect-ratio: 16/9;
+    background: var(--bg);
     overflow: hidden; position: relative;
     display: flex; align-items: center; justify-content: center;
+    padding: 36px;
+    border-bottom: 1px solid var(--line);
   }
-  .socio-photo img { width: 100%; height: 100%; object-fit: cover; }
-  .socio-photo::after {
+  .marca-logo-wrap.light {
+    background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
+  }
+  .marca-logo-wrap::after {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 60%, rgba(6,6,6,0.7));
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.18));
     pointer-events: none;
   }
-  .socio-photo.placeholder {
-    background: linear-gradient(135deg, #181818, #0c0c0c);
-    color: var(--text-soft); font-family: var(--serif); font-size: 80px; font-style: italic; font-weight: 400;
+  .marca-logo-wrap img {
+    max-width: 78%; max-height: 78%;
+    width: auto; height: auto;
+    object-fit: contain;
+    position: relative; z-index: 1;
   }
-  .socio-photo.placeholder::before {
-    content: ''; position: absolute; inset: 12px;
-    border: 1px dashed var(--line-mid); border-radius: 4px;
-  }
-  .socio-photo.placeholder .ph-label {
-    position: absolute; bottom: 16px; left: 16px; right: 16px;
-    font-family: var(--mono); font-style: normal; font-size: 11px; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--gold); text-align: left;
-  }
-  .socio-info { padding: 30px 32px; }
-  .socio-tag {
+  .marca-info { padding: 32px 36px 36px; flex: 1; display: flex; flex-direction: column; }
+  .marca-tag {
     font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
   }
-  .socio-name {
-    font-family: var(--serif); font-weight: 700; font-size: 30px; line-height: 1.1;
-    margin-bottom: 10px; letter-spacing: -0.01em;
+  .marca-name {
+    font-family: var(--serif); font-weight: 700; font-size: 28px; line-height: 1.15;
+    margin-bottom: 16px; letter-spacing: -0.01em;
   }
-  .socio-role { color: var(--gold); font-size: 14px; font-weight: 500; margin-bottom: 16px; }
-  .socio-bio { color: var(--text-muted); font-size: 15px; line-height: 1.6; }
-  .socio-trunfo {
-    margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line);
+  .marca-name .italic { font-style: italic; color: var(--gold); font-weight: 600; }
+  .marca-bio { color: var(--text-muted); font-size: 15px; line-height: 1.65; flex: 1; }
+  .marca-bio strong { color: var(--text); font-weight: 500; }
+  .marca-trunfo {
+    margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line);
     font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em;
     color: var(--gold-bright);
   }
 
-  @media (max-width: 860px) { .socios-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .parceria-grid { grid-template-columns: 1fr; } }
 
   /* ---------- NUMBERS ---------- */
   .numbers-grid {
@@ -619,6 +640,25 @@
     font-size: 24px; margin-bottom: 12px;
   }
   .footer-brand p { color: var(--text-muted); font-size: 14px; max-width: 380px; line-height: 1.6; }
+  .footer-logos {
+    display: flex; align-items: center; gap: 20px;
+    margin-bottom: 18px; flex-wrap: wrap;
+  }
+  .footer-logo {
+    height: 44px;
+    display: flex; align-items: center;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+  }
+  .footer-logo:hover { border-color: var(--gold-line); }
+  .footer-logo.light { background: #ffffff; }
+  .footer-logo img { max-height: 100%; width: auto; display: block; }
+  .footer-logos-x {
+    font-family: var(--serif); font-style: italic;
+    font-size: 22px; color: var(--gold); font-weight: 400;
+  }
   .footer-col h5 {
     font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
     text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
@@ -671,7 +711,7 @@
     <a href="#pacotes">Pacotes</a>
     <a href="#alacarte">A la carte</a>
     <a href="#stack">Stack</a>
-    <a href="#socios">Socios</a>
+    <a href="#parceria">Parceria</a>
   </div>
   <a href="#contato" class="nav-cta">Falar com a gente</a>
 </nav>
@@ -679,17 +719,24 @@
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="hero-grid">
+    <div class="hero-logos fade-up">
+      <div class="hero-logo webtv">
+        <img src="assets/logo-webtv.png" alt="Portal WebTV Piaui" loading="eager">
+      </div>
+      <div class="hero-logos-x" aria-hidden="true">&times;</div>
+      <div class="hero-logo">
+        <img src="assets/logo-digital-master.png" alt="Digital Master" loading="eager">
+      </div>
+    </div>
     <div>
-      <p class="hero-eyebrow fade-up">Marketing digital com IA &middot; Interior do Piaui</p>
-      <h1 class="fade-up delay-1">
-        <span class="thin">Tecnologia</span>
-        <span class="italic">de ponta,</span><br>
-        presenca <span class="italic">regional</span><br>
-        <span class="thin">de verdade.</span>
+      <p class="hero-eyebrow fade-up delay-1">Marketing digital com IA &middot; Interior do Piaui</p>
+      <h1 class="fade-up delay-2">
+        Marketing digital pra <span class="italic">PME</span><br>
+        <span class="thin">que precisa</span> vender.
       </h1>
-      <p class="hero-sub fade-up delay-2">
+      <p class="hero-sub fade-up delay-3">
+        Parceria estrategica entre <strong>WebTV Piaui</strong> e <strong>Digital Master</strong>.
         Stack proprietaria de IA + audiencia construida no maior portal do interior do Piaui.
-        <strong>Sua marca aparece onde o cliente local ja esta olhando.</strong>
       </p>
       <div class="hero-ctas fade-up delay-3">
         <a href="#pacotes" class="btn-primary">
@@ -699,13 +746,6 @@
         <a href="#contato" class="btn-ghost">
           <span>Falar com a gente</span>
         </a>
-      </div>
-    </div>
-    <div class="hero-photo fade-up delay-2">
-      <img src="assets/salatiel.png" alt="Salatiel Batista, especialista em IA aplicada a negocios" loading="eager">
-      <div class="hero-photo-tag">
-        <span class="name">Salatiel Batista</span>
-        IA &middot; Estrategia &middot; Automacao
       </div>
     </div>
   </div>
@@ -749,7 +789,7 @@
         </div>
         <ul class="split-list">
           <li>Stack de IA cria 12 artes/mes em escala</li>
-          <li>Fabricio filma e edita com qualidade jornalistica</li>
+          <li>Producao de video com qualidade jornalistica</li>
           <li>Calendario editorial pronto, ritmo semanal garantido</li>
           <li>Onboarding completo do Instagram no primeiro mes</li>
           <li>Colab no portal regional &mdash; <strong>47k seguidores qualificados</strong></li>
@@ -791,7 +831,7 @@
         <div class="pacote-num">Pacote 02</div>
         <h3>Starter <span class="italic">Presencial</span></h3>
         <div class="pacote-price"><span class="currency">R$</span>1.200<small>/mes</small></div>
-        <p class="pacote-desc">Para o empresario que quer aparecer com rosto e historia. Fabricio filma e edita com qualidade jornalistica.</p>
+        <p class="pacote-desc">Para o empresario que quer aparecer com rosto e historia. Producao com filmagem e edicao de qualidade jornalistica.</p>
         <ul class="pacote-feats">
           <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l3 3 5-7" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>12 artes/mes</strong> com identidade visual alinhada</span></li>
           <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l3 3 5-7" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>4 videos com pessoa real</strong> &mdash; filmagem + edicao editorial</span></li>
@@ -848,7 +888,7 @@
         </summary>
         <div class="acc-body">
           <div class="acc-row"><span>Video com IA (Reel editado por IA)</span><span class="price">R$ 150</span></div>
-          <div class="acc-row"><span>Video com pessoa real (Fabricio filma + edita)</span><span class="price">R$ 250</span></div>
+          <div class="acc-row"><span>Video com pessoa real (filmagem + edicao jornalistica)</span><span class="price">R$ 250</span></div>
         </div>
       </details>
 
@@ -928,40 +968,40 @@
   </div>
 </section>
 
-<!-- SOCIOS -->
-<section id="socios" class="socios">
+<!-- PARCERIA -->
+<section id="parceria" class="parceria">
   <div class="container">
-    <p class="section-label fade-up">05 &middot; Quem fala com voce</p>
+    <p class="section-label fade-up">05 &middot; Parceria estrategica</p>
     <h2 class="section-title fade-up delay-1">
-      <span class="italic">Dois socios</span> que se completam.<br>
-      <span class="thin">Tecnologia + presenca regional.</span>
+      Duas <span class="italic">marcas</span> que se completam.<br>
+      <span class="thin">Audiencia regional + tecnologia de ponta.</span>
     </h2>
+    <p class="section-lead fade-up delay-2">
+      WebTV Piaui entra com presenca regional consolidada. Digital Master entra com stack proprietaria de IA. Juntas, formam uma agencia que entrega resultado de big agency com custo de interior.
+    </p>
 
-    <div class="socios-grid">
-      <div class="socio fade-up delay-2">
-        <div class="socio-photo">
-          <img src="assets/salatiel.png" alt="Salatiel Batista">
+    <div class="parceria-grid">
+      <div class="marca-card fade-up delay-2">
+        <div class="marca-logo-wrap light">
+          <img src="assets/logo-webtv.png" alt="Portal WebTV Piaui" loading="lazy">
         </div>
-        <div class="socio-info">
-          <div class="socio-tag">Co-fundador &middot; Tecnologia</div>
-          <div class="socio-name">Salatiel Batista</div>
-          <div class="socio-role">Especialista em IA aplicada a negocios</div>
-          <p class="socio-bio">Criador do metodo Digital Master, ensina empresarios a usar inteligencia artificial para vender mais e automatizar processos. Mais de 5 anos com marketing digital, automacao e escala. Toca a stack tecnologica da agencia.</p>
-          <div class="socio-trunfo">5+ anos &middot; IA &middot; Automacao &middot; Escala</div>
+        <div class="marca-info">
+          <div class="marca-tag">Audiencia regional</div>
+          <div class="marca-name"><span class="italic">Portal</span> WebTV Piaui</div>
+          <p class="marca-bio">Audiencia regional consolidada &mdash; <strong>47k+ seguidores</strong> no portal de noticias mais influente da microrregiao de Castelo do Piaui. Producao jornalistica, autoridade local e relacionamento direto com a comunidade.</p>
+          <div class="marca-trunfo">@portalwebtvpiaui &middot; 47.871 seguidores</div>
         </div>
       </div>
 
-      <div class="socio fade-up delay-3">
-        <div class="socio-photo placeholder">
-          <span>F</span>
-          <div class="ph-label">Foto em breve</div>
+      <div class="marca-card fade-up delay-3">
+        <div class="marca-logo-wrap">
+          <img src="assets/logo-digital-master.png" alt="Digital Master" loading="lazy">
         </div>
-        <div class="socio-info">
-          <div class="socio-tag">Co-fundador &middot; Producao &amp; Audiencia</div>
-          <div class="socio-name">Fabricio</div>
-          <div class="socio-role">Rosto e voz do Portal WebTV Piaui</div>
-          <p class="socio-bio">Referencia em jornalismo local, producao de video e relacionamento com a comunidade regional. O rosto mais conhecido da microrregiao de Castelo do Piaui. Toca a producao humana de videos e a colab no portal.</p>
-          <div class="socio-trunfo">@portalwebtvpiaui &middot; 47.871 seguidores</div>
+        <div class="marca-info">
+          <div class="marca-tag">Tecnologia &amp; IA</div>
+          <div class="marca-name"><span class="italic">Digital</span> Master</div>
+          <p class="marca-bio">Stack proprietaria de IA aplicada a vendas &mdash; automatiza <strong>70% da operacao de agencia</strong>. Metodo testado em escala, com 5+ anos de marketing digital, automacao e producao de conteudo orquestrada por IA.</p>
+          <div class="marca-trunfo">5+ anos &middot; IA &middot; Automacao &middot; Escala</div>
         </div>
       </div>
     </div>
@@ -1055,8 +1095,13 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
+      <div class="footer-logos">
+        <div class="footer-logo light"><img src="assets/logo-webtv.png" alt="WebTV Piaui"></div>
+        <span class="footer-logos-x" aria-hidden="true">&times;</span>
+        <div class="footer-logo"><img src="assets/logo-digital-master.png" alt="Digital Master"></div>
+      </div>
       <h4><span style="color:var(--gold)">WebTV</span> &amp; Digital Master</h4>
-      <p>Agencia de marketing digital com IA para o interior do Piaui. Stack proprietaria + presenca regional construida ao longo de anos.</p>
+      <p>Parceria estrategica entre o portal regional mais seguido do interior do Piaui e a stack de IA aplicada a vendas. Agencia de marketing digital pensada pra PME que precisa vender.</p>
     </div>
     <div class="footer-col">
       <h5>Navegar</h5>
@@ -1064,7 +1109,7 @@
       <a href="#pacotes">Pacotes</a>
       <a href="#alacarte">A la carte</a>
       <a href="#stack">Stack</a>
-      <a href="#socios">Socios</a>
+      <a href="#parceria">Parceria</a>
     </div>
     <div class="footer-col">
       <h5>Contato</h5>
@@ -1074,8 +1119,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 WebTV &amp; Digital Master &middot; Todos os direitos reservados</span>
-    <span>Salatiel Batista &middot; Fabricio</span>
+    <span>&copy; 2026 WebTV e Digital Master &middot; Todos os direitos reservados</span>
+    <span>Parceria estrategica</span>
   </div>
 </footer>
 
@@ -1126,13 +1171,13 @@
     });
   }
 
-  // Parallax leve no hero photo
-  const heroPhoto = document.querySelector('.hero-photo');
-  if (heroPhoto && window.matchMedia('(min-width: 980px)').matches) {
+  // Parallax leve nas logos do hero (sutil, so desktop)
+  const heroLogos = document.querySelector('.hero-logos');
+  if (heroLogos && window.matchMedia('(min-width: 980px)').matches) {
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-      if (y < 800) {
-        heroPhoto.style.transform = `translateY(${y * 0.05}px)`;
+      if (y < 600) {
+        heroLogos.style.transform = `translateY(${y * 0.04}px)`;
       }
     }, { passive: true });
   }
